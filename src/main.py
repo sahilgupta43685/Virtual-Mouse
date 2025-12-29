@@ -111,8 +111,8 @@ while True:
     
     # Draw Control Box
     cv2.rectangle(img, (frame_reduction, frame_reduction),
-                  (width_cam - frame_reduction, height_cam - frame_reduction),
-                  (255, 0, 255), 2)
+            (width_cam - frame_reduction, height_cam - frame_reduction), 
+            (255, 0, 255), 2)
     
     mode_text = "Idle" # Default status
 
@@ -184,12 +184,12 @@ while True:
 
         # --- MODE 4: ENTER KEY (Fist / All Fingers Down) ---
         if fingers[1] == 0 and fingers[2] == 0 and fingers[3] == 0 and fingers[4] == 0:
-             mode_text = "Enter Key"
-             if time.time() - last_click_time > 1:
-                 pyautogui.press('enter')
-                 last_click_time = time.time()
-                 cv2.putText(img, "ENTER PRESSED", (width_cam//2 - 100, height_cam//2), 
-                             cv2.FONT_HERSHEY_PLAIN, 3, (0, 255, 255), 3)
+            mode_text = "Enter Key"
+            if time.time() - last_click_time > 1:
+                pyautogui.press('enter')
+                last_click_time = time.time()
+                cv2.putText(img, "ENTER PRESSED", (width_cam//2 - 100, height_cam//2), 
+                cv2.FONT_HERSHEY_PLAIN, 3, (0, 255, 255), 3)
 
     # --- FPS & HUD ---
     cTime = time.time()
